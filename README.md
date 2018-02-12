@@ -2,7 +2,8 @@ Arena Game Data Project (NHL and NBA teams with shared arenas)
 
 This is my first foray into data analysis with python, in particular with using matplotlib and pandas.
 
-Question: For NHL and NBA teams that share arenas, does how recently the other team played in the arena affect the performance/outcome of 
+QUESTION
+For NHL and NBA teams that share arenas, does how recently the other team played in the arena affect the performance/outcome of 
 a team's game? For example, does a team tend to score less or lose more if the other sport's team played in that arena the previous day or 
 2, compared to if they played 4-5 days ago or more? This is a common grievance among fans of both leagues, and it has occasionally been 
 suspected by fans that the arena having been restructured and re-purposed in such a short timespan affects the quality or playing 
@@ -15,6 +16,7 @@ the analysis for the time being (this may change in the future though). Data are
 particular the websites:
 
 https://www.backetball-reference.com/
+
 https://www.hockey-reference.com/
 
 Data are from the last 4 full seasons played at the time of this projectL: 2013-14, 2014-15 2015-16, and 2016-17. The object of the 
