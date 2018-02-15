@@ -96,7 +96,6 @@ def main():
         hky_from_bkb_dist_T = np.int64([])
             
         for year in years:
-            #print("Comparing " + bkb_tm + " with " + hky_tm + " in " + str(year))
             bkb_data = pd.read_csv(sys.argv[1] + "/" + bkb_tm + str(year) + "home.csv")
             hky_data = pd.read_csv(sys.argv[1] + "/" + hky_tm + str(year) + "home.csv")
             
@@ -135,24 +134,9 @@ def main():
             hky_goalsAgainst_T = np.append(hky_goalsAgainst_T, hky_goalsAgainst)
             hky_goals_T = np.append(hky_goals_T, hky_goals)
             
-            #print("For " + str(year) + " " + bkb_tm + " games, days after most recent " + hky_tm + " game")     
             bkb_from_hky_dist = get_game_distances(bkb_data_doy, hky_data_doy, year)
             bkb_from_hky_dist = np.int64(bkb_from_hky_dist)
             bkb_from_hky_dist_T = np.append(bkb_from_hky_dist_T, bkb_from_hky_dist)
-            #print(bkb_from_hky_dist)
-            #print(np.mean(bkb_from_hky_dist))
-            #print("Performance of  " + str(year) + " " + bkb_tm + " by days ago " + hky_tm + " played")            
-            #print(list(zip(bkb_from_hky_dist, bkb_data_performance)))
-            #print(list(zip(bkb_data_performance, bkb_from_hky_dist)))
-            
-            #plt.scatter(*zip(*list(zip(bkb_from_hky_dist, bkb_data_performance))))
-            #plt.title("Performance of  " + str(year) + " " + bkb_tm + " by days ago " + hky_tm + " played")
-            #plt.xlabel("Days ago " + hky_tm + " played")
-            #plt.ylabel("Game Result")
-            #plt.show()
-            
-            #print(results_daysAgo_avg(zip(bkb_data_performance, bkb_from_hky_dist)))
-            #print(str(bkb_wins) + " " + str(bkb_losses))
             
             """
             To get single-season plots, comment in
@@ -182,25 +166,9 @@ def main():
             end of single-season basketball plots
             """
 
-            
-            #print("For " + str(year) + " " + hky_tm + " games, days after most recent " + bkb_tm + " game")     
             hky_from_bkb_dist = get_game_distances(hky_data_doy, bkb_data_doy, year)
             hky_from_bkb_dist = np.int64(hky_from_bkb_dist)
             hky_from_bkb_dist_T = np.append(hky_from_bkb_dist_T, hky_from_bkb_dist)
-            #print(hky_from_bkb_dist)
-            #print(np.mean(hky_from_bkb_dist))
-            #print("Performance of  " + str(year) + " " + hky_tm + " by days ago " + bkb_tm + " played")
-            #print(list(zip(hky_from_bkb_dist, hky_data_performance)))
-            #print(list(zip(hky_data_performance, hky_from_bkb_dist)))
-            
-            #plt.scatter(*zip(*list(zip(hky_from_bkb_dist, hky_data_performance))))
-            #plt.title("Performance of  " + str(year) + " " + hky_tm + " by days ago " + bkb_tm + " played")
-            #plt.xlabel("Days ago " + bkb_tm + " played")
-            #plt.ylabel("Game Result")
-            #plt.show()
-            
-            #print(results_daysAgo_avg(zip(hky_data_performance, hky_from_bkb_dist)))
-            #print(str(hky_wins) + " " + str(hky_ties) + " " + str(hky_losses))
             
             """
             To get single-season plots, comment in
@@ -272,19 +240,6 @@ def main():
         plt.text(0, -3.5, "Total: y = " + str(fit_hky_T[0]) + "x + " + str(fit_hky_T[1]))
         plt.show()
 
-        #plt.figure()
-        #plt.scatter(*zip(*list(zip(bkb_from_hky_dist_T, bkb_data_performance_T))))
-        #plt.title("Performance of " + bkb_tm + " 2014-2017 by days ago " + hky_tm + " played")
-        #plt.xlabel("Days ago " + hky_tm + " played")
-        #plt.ylabel("Game Result")
-        #plt.show()
-        
-        #plt.figure()
-        #plt.scatter(*zip(*list(zip(hky_from_bkb_dist_T, hky_data_performance_T))))
-        #plt.title("Performance of " + hky_tm + " 2014-2017 by days ago " + bkb_tm + " played")
-        #plt.xlabel("Days ago " + bkb_tm + " played")
-        #plt.ylabel("Game Result")
-        #plt.show()
         
     toc = time.time()
     print(str((toc-tic)*1000) + "ms")
