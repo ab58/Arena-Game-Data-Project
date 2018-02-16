@@ -34,8 +34,8 @@ compared to how recently the other team played in the arena. Data can be observe
 arena-home-data, which needs to be passed as an argument to the script.
 
 By default, the code prints only the cumulative 4-season plots for each team. There are commented out code blocks to get the single-season 
-plots for each team, one each for the hockey and basketball teams. The lines to comment in or out depending on if single-season plots are 
-desired are shown in the script.
+plots for each team, one each for the hockey and basketball teams. The lines to comment in or out depends on if single-season plots are 
+desired to be shown in the script.
 
 Hope you enjoy this little pet project! This was really a practice exercise to familiarize myself with the data science toolbox available 
 in python and its versatility. Nonetheless I came up with meaningful data visualizations and got an opportunity to explore and attempt to 
