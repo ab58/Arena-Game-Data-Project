@@ -138,8 +138,16 @@ def main():
             bkb_from_hky_dist = np.int64(bkb_from_hky_dist)
             bkb_from_hky_dist_T = np.append(bkb_from_hky_dist_T, bkb_from_hky_dist)
             
+            
             """
             To get single-season plots, comment in
+            
+            plt.scatter(*zip(*list(zip(bkb_from_hky_dist, bkb_data_performance))))
+            plt.title("Performance of  " + str(year) + " " + bkb_tm + " by days ago " + hky_tm + " played")
+            plt.xlabel("Days ago " + hky_tm + " played")
+            plt.ylabel("Game Result")
+            plt.show()
+            
             
             plt.figure()
             fit_bkb_for = np.polyfit(bkb_from_hky_dist, bkb_pointsFor, deg=1)
@@ -166,12 +174,21 @@ def main():
             end of single-season basketball plots
             """
 
+            
             hky_from_bkb_dist = get_game_distances(hky_data_doy, bkb_data_doy, year)
             hky_from_bkb_dist = np.int64(hky_from_bkb_dist)
             hky_from_bkb_dist_T = np.append(hky_from_bkb_dist_T, hky_from_bkb_dist)
             
+            
             """
             To get single-season plots, comment in
+            
+            plt.scatter(*zip(*list(zip(hky_from_bkb_dist, hky_data_performance))))
+            plt.title("Performance of  " + str(year) + " " + hky_tm + " by days ago " + bkb_tm + " played")
+            plt.xlabel("Days ago " + bkb_tm + " played")
+            plt.ylabel("Game Result")
+            plt.show()
+
             
             plt.figure()
             fit_hky_for = np.polyfit(hky_from_bkb_dist, hky_goalsFor, deg=1)
@@ -240,6 +257,19 @@ def main():
         plt.text(0, -3.5, "Total: y = " + str(fit_hky_T[0]) + "x + " + str(fit_hky_T[1]))
         plt.show()
 
+        plt.figure()
+        plt.scatter(*zip(*list(zip(bkb_from_hky_dist_T, bkb_data_performance_T))))
+        plt.title("Performance of " + bkb_tm + " 2014-2017 by days ago " + hky_tm + " played")
+        plt.xlabel("Days ago " + hky_tm + " played")
+        plt.ylabel("Game Result")
+        plt.show()
+        
+        plt.figure()
+        plt.scatter(*zip(*list(zip(hky_from_bkb_dist_T, hky_data_performance_T))))
+        plt.title("Performance of " + hky_tm + " 2014-2017 by days ago " + bkb_tm + " played")
+        plt.xlabel("Days ago " + bkb_tm + " played")
+        plt.ylabel("Game Result")
+        plt.show()
         
     toc = time.time()
     print(str((toc-tic)*1000) + "ms")

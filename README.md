@@ -20,7 +20,7 @@ https://www.backetball-reference.com/
 
 https://www.hockey-reference.com/
 
-Data are from the last 4 full seasons played at the time of this projectL: 2013-14, 2014-15 2015-16, and 2016-17. The object of the 
+Data are from the last 4 full seasons played at the time of this project: 2013-14, 2014-15 2015-16, and 2016-17. The object of the 
 analysis is to find, for each team in each year, any correlation between the number of "days ago" the arena's other team played, and plot 
 that against the team's scoring for and against, as well as the game outcomes. For example, the Flyers' game results will be plotted 
 against the number of "days ago" the 76ers played in that arena (i.e. the most recent game before the Flyers' home game), the Bulls' game 
